@@ -1,0 +1,11 @@
+{
+  "name": "pdf-to-image-service",
+  "description": "Spring Boot REST Server for PDF downloading and converting to image.",
+  "addons": [ ],
+  "env": {
+    "AUTH_TOKEN": {
+      "description": "A secret key for http serving",
+      "generator": "secret"
+    }
+  }
+}
