@@ -73,6 +73,7 @@ public class RestController {
         }
 
         int weeknum = getCurrentWeeknum();
+        System.out.println("Weeknum: " + weeknum);
         if (isWeeknumAlreadyInMongoDB(weeknum)) {
             return new ResponseEntity<String>(HttpStatus.ALREADY_REPORTED);
         }
