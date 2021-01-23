@@ -1,4 +1,4 @@
-# menu-reader-pdf-to-image-service
+# Menu Reader: PDF to Image Service
 
 Handles website crawling and converting pdf to image 
 
