@@ -9,7 +9,7 @@ Handles website crawling and converting pdf to image
 
 ### Environment Variables 
     
-- AUTH_TOKEN, string, secret to secure the routes
+- AUTH_TOKEN, string, secret to secure the routes, example: `mySuperSecretAuthTokenForHttpCalls`
 
 - MENU_BASE_URL, string, base page to crawl, example: `https://www.my-menu-provider.de/`
 
