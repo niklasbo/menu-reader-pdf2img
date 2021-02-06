@@ -3,14 +3,12 @@
 Handles website crawling and converting pdf to image 
 
 ## API
-| Path          | Header       | Function                                                |
-|---------------|--------------|---------------------------------------------------------|
-| /pdf2image    | X-AUTH-TOKEN | crawls the website, finds pdfs and saves it in database |
+| Path          | Function                                                |
+|---------------|---------------------------------------------------------|
+| /pdf2image    | crawls the website, finds pdfs and saves it in database |
 
 ### Environment Variables 
     
-- AUTH_TOKEN, string, secret to secure the routes, example: `mySuperSecretAuthTokenForHttpCalls`
-
 - MENU_BASE_URL, string, base page to crawl, example: `https://www.my-menu-provider.de/`
 
 - MENU_OVERVIEW_URL_ENDING, string, specific page which contains links to the pdfs, example: `speiseplan.html`
