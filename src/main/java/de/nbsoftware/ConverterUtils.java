@@ -61,7 +61,8 @@ public class ConverterUtils {
         String[] foundUrls = StringUtils.substringsBetween(htmlText, "<a href=\"" + hrefIdentifyer, CLOSING_BRACKET);
         for (String a : foundUrls) {
             final String urlToPdf = menuBaseUrl + hrefIdentifyer + a;
-            urlPdfs.add(new PdfUrl(urlToPdf, StringUtils.substringBetween(htmlText, urlToPdf + CLOSING_BRACKET, "<")));
+            final String visibleText = StringUtils.substringBetween(htmlText, hrefIdentifyer + a + CLOSING_BRACKET, "<");
+            urlPdfs.add(new PdfUrl(urlToPdf, visibleText == null ? "" : visibleText));
         }
         return urlPdfs;
     }
