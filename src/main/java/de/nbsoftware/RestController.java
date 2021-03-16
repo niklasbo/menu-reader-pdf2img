@@ -34,10 +34,10 @@ public class RestController {
         }
         try {
             String htmlText = WebsiteUtils.scanWebsiteToText(menuBaseUrl + menuOverviewUrlEnding);
-            List<String> urlsToPdfs = ConverterUtils.findPdfUrlsInHtml(menuBaseUrl, hrefIdentifier, htmlText);
+            List<PdfUrl> urlsToPdfs = ConverterUtils.findPdfUrlsInHtml(menuBaseUrl, hrefIdentifier, htmlText);
             boolean onlyKnownPdfs = true;
-            for (String urlToPdf : urlsToPdfs) {
-                int weeknum = ConverterUtils.getWeeknumOfUrl(urlToPdf);
+            for (PdfUrl pdfUrl : urlsToPdfs) {
+                int weeknum = ConverterUtils.getWeeknumOfUrl(pdfUrl);
 
                 if (MongoUtils.isWeeknumAlreadyInMongoDB(connectionString, databaseName, collectionName, weeknum)) {
                     continue;
@@ -49,7 +49,7 @@ public class RestController {
                 pdfFile.deleteOnExit();
                 jpegFile.deleteOnExit();
 
-                WebsiteUtils.downloadPdf(urlToPdf, pdfFile);
+                WebsiteUtils.downloadPdf(pdfUrl.urlToPdf, pdfFile);
                 ConverterUtils.convertPdfToJpeg(pdfFile, pdfPageNumber, imageDpi, jpegFile);
 
                 String base64Image = ConverterUtils.jpegToBase64String(jpegFile);
