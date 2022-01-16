@@ -2,6 +2,9 @@
 
 Handles website crawling and converting pdf to image 
 
+## Archive Note :ledger:
+Due to Covid-19 pandemic this service was archived. Everybody works remotely so there is no need for this anymore.
+
 ## API
 | Path          | Function                                                |
 |---------------|---------------------------------------------------------|
