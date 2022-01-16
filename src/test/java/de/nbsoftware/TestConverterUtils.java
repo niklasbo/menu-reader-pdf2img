@@ -29,7 +29,7 @@ public class TestConverterUtils {
             fail("Precondition not fulfilled.");
         }
         List<PdfUrl> res = ConverterUtils.findPdfUrlsInHtml("https://www.sodexo-tk-online.de/", "assets/context/sodexo-tk-online/Speiseplan/", htmlText);
-        assertEquals(2, res.size());
+        assertEquals(3, res.size());
         res.forEach((s) -> {
             System.out.println(s);
             assertTrue(s.urlToPdf.startsWith("https://"));
